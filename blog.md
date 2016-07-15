@@ -53,7 +53,8 @@ to - do:
     heroku ps:scale web=1
 
 	# 打開網頁看看效果
-	heroku open [url]
+	heroku open
+    heroku open cool
 
 	# 看看日志
 	heroku log --tail
@@ -61,7 +62,7 @@ to - do:
 ===========
 continue learning heroku:
 
-    # create a sample package.json file
+    # create a sample package.json file to tell Heroku about Nodejs app
     npm init --yes
 
     # install the app dependencies locally
@@ -77,6 +78,27 @@ continue learning heroku:
     git add .
     git commit -m "blablabla..."
     git push heroku master
+
+    # check dynos and scale it
+    heroku ps
+    heroku ps:scale web=1
+
+    # list all add-on
+    heroku addons
+    heroku addons:create <add-on-name>
+    heroku addons:open <add-on-name>
+
+    # run some command in CLI
+    heroku run node
+    heroku run bash
+
+    # set config vars
+    heroku config
+    heroku config:set TIMES=3
+
+    # rename your apps at anytime
+    heroku apps:rename <app_name>
+
 
 2016.7.11
 ============
